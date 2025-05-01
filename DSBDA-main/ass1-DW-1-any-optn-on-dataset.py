@@ -1,0 +1,17 @@
+import pandas as pd
+from  sklearn.preprocessing import LabelEncoder
+df = pd.read_csv('BostonHousing.csv')
+print(df)
+print(df.isnull())
+print(df.describe())
+print(df.dtypes)
+print(df.ndim)
+print(df.shape)
+df['ptratio'] = df['ptratio'].astype(int)
+print(df['ptratio'])
+df1 = pd.read_csv('StudentsPerformance.csv')
+print(df1)
+le = LabelEncoder()
+print(df1['gender'].unique())
+df1['gender'] = le.fit_transform(df1['gender'])
+print(df1['gender'].unique())
